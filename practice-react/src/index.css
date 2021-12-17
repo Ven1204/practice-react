@@ -1,0 +1,15 @@
+.btn {
+  color: white;
+  background-color: red;
+  border-radius: 16px;
+  height: 30px;
+  width: 80px;
+}
+
+.card {
+  background-color: whitesmoke;
+}
+
+.container {
+  text-align: center;
+}
