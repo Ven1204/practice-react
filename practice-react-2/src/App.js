@@ -6,21 +6,15 @@ import MainNavigation from './components/layout/MainNavigation';
 
 function App() {
   // paths
-  // <Switch>  - older version of react, replaced by <BrowserRouter>
+  // <Switch>  - older version of react, replaced by <Routes>
 
   return (
     <div>
       <MainNavigation />
         <Routes>
-          <Route path='/' exact>
-            <AllMeetupsPage />
-          </Route>
-          <Route path='/new-meetup'>
-            <NewMeetupsPage />
-          </Route>
-          <Route path='/favorites'>
-            <FavoritesPage />
-          </Route>
+          <Route path='/' element={<AllMeetupsPage />} />
+          <Route path='/new-meetups' element={<NewMeetupsPage />} />
+          <Route path='/favorites' element={<FavoritesPage />} />
         </Routes>
     </div>
   );
