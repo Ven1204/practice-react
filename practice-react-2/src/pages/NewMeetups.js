@@ -1,8 +1,23 @@
+import  { useNavigate } from 'react-router-dom';
+
 import NewMeetupForm from '../components/meetups/NewMeetupFrom'
 
 function NewMeetupsPage() {
+  const history = useNavigate();
+
   function addMeetupHandler(meetupData) {
-    fetch('https://react-practice-930e5-default-rtdb.firebaseio.com/meetups.json');
+    fetch(
+      'https://react-practice-930e5-default-rtdb.firebaseio.com/meetups.json',
+      {
+        method: 'POST',
+        body: JSON.stringify(meetupData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    ).then(() => {
+      history.replace('/')
+    });
   }
 
   return (
